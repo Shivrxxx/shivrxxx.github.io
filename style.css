@@ -258,23 +258,44 @@ section {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.available {
+..availability {
   display: inline-flex;
+  align-items: center;
   gap: 10px;
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(0,255,120,0.12);
-  border: 1px solid rgba(0,255,120,0.4);
+  background: rgba(0, 255, 120, 0.12);
+  border: 1px solid rgba(0, 255, 120, 0.4);
+  color: #eafff4;
   font-size: 14px;
-  margin-bottom: 30px;
 }
 
-.dot {
+/* DOT */
+.status-dot {
   width: 8px;
   height: 8px;
   background: #00ff78;
   border-radius: 50%;
-  animation: pulse 1.5s infinite;
+  position: relative;
+  animation: dot-pulse 1.6s infinite ease-in-out;
+}
+
+/* PULSE ANIMATION */
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 120, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 255, 120, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 120, 0);
+  }
+}
+
+/* TEXT (STATIC) */
+.status-text {
+  white-space: nowrap;
 }
 
 .hero h1 {
