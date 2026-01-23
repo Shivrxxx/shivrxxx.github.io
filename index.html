@@ -13,30 +13,22 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <!-- Lottie -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= PRELOADER ================= -->
+<!-- PRELOADER -->
 <div id="preloader">
-  <img src="assets/signature-light.png" alt="Loading Signature">
+  <img src="assets/signature-light.png" alt="Loading">
 </div>
 
-<!-- ================= NOISE BACKGROUND ================= -->
+<!-- NOISE -->
 <div class="noise"></div>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-left">
-    <img
-      src="assets/signature-light.png"
-      alt="Sivaramkumar Signature"
-      class="nav-signature"
-      id="siteLogo"
-    />
+    <img src="assets/signature-light.png" id="siteLogo" class="nav-signature" />
   </div>
 
   <nav class="nav-center">
@@ -48,51 +40,33 @@
   </nav>
 
   <div class="nav-right">
-  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-    🌙
-  </button>
-</div>
-
-    <!-- Hamburger -->
+    <button id="themeToggle">🌙</button>
     <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- ================= MOBILE MENU ================= -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+  <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+  <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+  <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+  <a href="#projects"><i class="fa-solid fa-layer-group"></i> Projects</a>
+  <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
 </div>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero snap" id="home">
   <div class="hero-content">
-
     <div class="available">
-      <span class="dot"></span>
-      Available for Work
+      <span class="dot"></span> Available for Work
     </div>
 
-    <!-- staggered text -->
     <h1 class="stagger">Hello, I'm</h1>
+    <img src="assets/signature-light.png" id="heroLogo" class="signature"/>
 
-    <img
-      src="assets/signature-light.png"
-      alt="Sivaramkumar"
-      class="signature"
-      id="heroLogo"
-    />
-
-    <h2 class="stagger">
-      Designer / Digital Marketer / Beginner Web Developer
-    </h2>
+    <h2 class="stagger">Designer / Digital Marketer / Beginner Web Developer</h2>
 
     <p class="description">
       I'm a creative designer and digital marketer who loves turning ideas
@@ -100,189 +74,116 @@
     </p>
 
     <div class="buttons">
-      <a href="assets/resume.pdf" download class="btn primary">
-        Download Resume
-      </a>
-      <a href="#projects" class="btn secondary">
-        View My Work
-      </a>
+      <a href="assets/resume.pdf" class="btn primary" download>Download Resume</a>
+      <a href="#projects" class="btn secondary">View My Work</a>
     </div>
 
     <div class="stats">
-      <div class="stat">
-        <h3>20+</h3>
-        <span>Projects</span>
-      </div>
-      <div class="stat">
-        <h3>2+</h3>
-        <span>Years Exp</span>
-      </div>
-      <div class="stat">
-        <h3>100%</h3>
-        <span>Client Satisfaction</span>
-      </div>
+      <div><h3>20+</h3><span>Projects</span></div>
+      <div><h3>2+</h3><span>Years Exp</span></div>
+      <div><h3>100%</h3><span>Client Satisfaction</span></div>
     </div>
-
   </div>
 
   <div class="hero-image">
-    <img src="assets/profile.jpg" alt="Profile Image">
+    <img src="assets/profile.jpg" alt="Profile">
   </div>
 </section>
 
-<!-- ================= SKILLS ================= -->
-<section class="skills-section snap" id="skills">
+<!-- SKILLS -->
+<section class="snap" id="skills">
   <div class="section-header">
     <h2>Skills & Expertise</h2>
-    <p>
-      A comprehensive skill set spanning design, digital marketing,
-      and web development to create impactful digital experiences.
-    </p>
+    <p>A comprehensive skill set spanning design, digital marketing, and web development.</p>
   </div>
 
   <div class="skills-grid">
-    <div class="skill-card"><h3>Design Tools</h3><div class="skill-tags"><span>Adobe Photoshop</span><span>Adobe Illustrator</span><span>Figma</span><span>Canva</span><span>Adobe XD</span></div></div>
-    <div class="skill-card"><h3>Digital Marketing</h3><div class="skill-tags"><span>SEO</span><span>Social Media Marketing</span><span>Content Marketing</span><span>Google Analytics</span><span>Email Marketing</span></div></div>
-    <div class="skill-card"><h3>Web Development</h3><div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Git</span></div></div>
-    <div class="skill-card"><h3>UI / UX Design</h3><div class="skill-tags"><span>User Interface Design</span><span>User Experience</span><span>Wireframing</span><span>Prototyping</span><span>Visual Design</span></div></div>
-    <div class="skill-card"><h3>Creative Skills</h3><div class="skill-tags"><span>Ad Creatives</span><span>Banner Design</span><span>Logo Design</span><span>Brand Identity</span><span>Typography</span></div></div>
-    <div class="skill-card"><h3>Marketing Strategy</h3><div class="skill-tags"><span>Brand Strategy</span><span>Content Strategy</span><span>Campaign Planning</span><span>Performance Analysis</span></div></div>
+    <div class="skill-card">Design Tools<br><span>Photoshop · Illustrator · Figma · Canva · XD</span></div>
+    <div class="skill-card">Digital Marketing<br><span>SEO · SMM · Content · Analytics · Email</span></div>
+    <div class="skill-card">Web Development<br><span>HTML · CSS · JavaScript · Git</span></div>
+    <div class="skill-card">UI / UX Design<br><span>Wireframes · Prototypes · Visual Design</span></div>
+    <div class="skill-card">Creative Skills<br><span>Branding · Typography · Logos</span></div>
+    <div class="skill-card">Marketing Strategy<br><span>Campaigns · Performance · Strategy</span></div>
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
-<section class="experience-section snap" id="experience">
+<!-- EXPERIENCE -->
+<section class="snap" id="experience">
   <div class="section-header">
     <h2>Experience & Projects</h2>
-    <p>
-      My journey in design, digital marketing, and web development,
-      showcasing hands-on experience and continuous learning.
-    </p>
+    <p>My journey in design, digital marketing, and web development.</p>
   </div>
 
   <div class="timeline">
-   <div class="timeline-item left">
-      <span class="timeline-dot"></span>
-      <div class="timeline-card">
-        <h3>Designer & Digital Marketer</h3>
-        <span class="timeline-date">2023 – Present · Freelance · Remote</span>
-        <p>Creating eye-catching designs, SEO campaigns, brand identities, and responsive websites.</p>
-        <div class="skill-tags"><span>Adobe Photoshop</span><span>Figma</span><span>SEO</span><span>HTML</span><span>CSS</span></div>
-      </div>
+    <div class="timeline-item left">
+      <h3>Designer & Digital Marketer</h3>
+      <span>2023 – Present · Freelance · Remote</span>
+      <p>Design, SEO, social media, and responsive website development.</p>
     </div>
 
     <div class="timeline-item right">
-      <span class="timeline-dot"></span>
-      <div class="timeline-card">
-        <h3>Web Design & Marketing Projects</h3>
-        <span class="timeline-date">2022 – 2023 · Personal Projects · Remote</span>
-        <p>Developed portfolio websites and learning-based tools with strong UI/UX fundamentals.</p>
-        <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Canva</span><span>Content Creation</span></div>
-      </div>
+      <h3>Web Design & Marketing Projects</h3>
+      <span>2022 – 2023 · Personal Projects</span>
+      <p>Portfolio websites, UI/UX practice, and marketing fundamentals.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
-<section class="projects-section snap" id="projects">
+<!-- PROJECTS -->
+<section class="snap" id="projects">
   <div class="section-header">
     <h2>Featured Projects</h2>
     <p>Explore my work across web development and digital design</p>
   </div>
 
   <div class="projects-grid">
+    <div class="project-card">
+      <img src="assets/project-1.jpg">
+      <h4>Website Spam Detection</h4>
+      <p>An intelligent spam detection system for websites.</p>
+      <button class="view-work">View Work</button>
+    </div>
 
-    <!-- PROJECT CARD TEMPLATE (x4) -->
-    <div class="project-card" data-project="1">
-      <div class="project-media">
-        <img src="assets/project-1.jpg" alt="Project Thumbnail">
-      </div>
-      <div class="project-content">
-        <h4>Website Spam Detection</h4>
-        <p>An intelligent spam detection system for websites.</p>
-        <button class="view-work">View Work</button>
-      </div>
+    <div class="project-card">
+      <img src="assets/project-2.jpg">
+      <h4>Personal Portfolio Website</h4>
+      <p>Responsive portfolio with modern UI and animations.</p>
+      <button class="view-work">View Work</button>
     </div>
-    
-    <div class="project-card" data-project="2">
-      <div class="project-media">
-        <img src="assets/project-2.jpg" alt="Project Thumbnail">
-      </div>
-      <div class="project-content">
-        <h4>Website Spam Detection</h4>
-        <p>An intelligent spam detection system for websites.</p>
-        <button class="view-work">View Work</button>
-      </div>
-    </div>
-  
-  <div class="project-card" data-project="3">
-      <div class="project-media">
-        <img src="assets/project-3.jpg" alt="Project Thumbnail">
-      </div>
-      <div class="project-content">
-        <h4>Website Spam Detection</h4>
-        <p>An intelligent spam detection system for websites.</p>
-        <button class="view-work">View Work</button>
-      </div>
-    </div>
-  
-  <div class="project-card" data-project="4">
-      <div class="project-media">
-        <img src="assets/project-4.jpg" alt="Project Thumbnail">
-      </div>
-      <div class="project-content">
-        <h4>Website Spam Detection</h4>
-        <p>An intelligent spam detection system for websites.</p>
-       <div class="skill-tags">
-          <span>Canva</span>
-          <span>Adobe XD</span>
-          <span>Social Media Marketing</span>
-        <button class="view-work">View Work</button>
-      </div>
-    </div>
-</div>
-    <!-- repeat for 4 projects -->
 
+    <div class="project-card">
+      <img src="assets/project-3.jpg">
+      <h4>Brand Identity Design</h4>
+      <p>Logo, typography, and brand systems.</p>
+      <button class="view-work">View Work</button>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/project-4.jpg">
+      <h4>Social Media Campaigns</h4>
+      <p>High-engagement creatives and ads.</p>
+      <button class="view-work">View Work</button>
+    </div>
   </div>
 </section>
 
-<!-- ================= PROJECT MODAL ================= -->
-<div class="project-modal" id="projectModal">
-  <div class="modal-content">
-    <button class="modal-close">&times;</button>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDesc"></p>
-    <div class="modal-gallery"></div>
-  </div>
-</div>
-
-<!-- ================= CONTACT ================= -->
-<section class="contact-section snap" id="contact">
+<!-- CONTACT -->
+<section class="snap" id="contact">
   <div class="section-header">
     <h2>Let’s Work Together</h2>
-    <p>
-      Ready to bring your next project to life?
-      Let’s connect and discuss how I can help.
-    </p>
+    <p>Ready to bring your next project to life?</p>
   </div>
 
-  <!-- ICON ONLY CONTACT -->
   <div class="contact-icons">
-    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-    <a href="mailto:shivxxx@gmail.com" aria-label="Email">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-    <a aria-label="Phone">
-      <i class="fa-solid fa-phone"></i>
-    </a>
+    <a href="https://github.com/Shivrxxx" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/sivaramkumar4657/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.behance.net/shivrxxx" target="_blank"><i class="fa-brands fa-behance"></i></a>
+    <a href="mailto:shivrxxx@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="tel:+918667231973"><i class="fa-solid fa-phone"></i></a>
   </div>
 </section>
 
-<footer>
-  © 2026 Sivaramkumar. All rights reserved.
-</footer>
+<footer>© 2026 Sivaramkumar. All rights reserved.</footer>
 
 <script src="script.js"></script>
 </body>
