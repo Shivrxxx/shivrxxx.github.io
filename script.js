@@ -38,3 +38,14 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 reveals.forEach(el => observer.observe(el));
+const navLogo = document.getElementById("siteLogo");
+const heroLogo = document.getElementById("heroLogo");
+
+function updateLogo(isLight) {
+  const src = isLight
+    ? "assets/signature-light.png"
+    : "assets/signature-dark.png";
+
+  navLogo.src = src;
+  heroLogo.src = src;
+}
