@@ -1,37 +1,41 @@
-// THEME TOGGLE
 const body = document.body;
 const toggleBtn = document.getElementById("themeToggle");
+const toggleIcon = toggleBtn.querySelector("i");
 const signatureImg = document.getElementById("signatureImg");
 
-/* Apply theme */
 function applyTheme(theme) {
   if (theme === "dark") {
     body.classList.add("dark");
     body.classList.remove("light");
 
-    // DARK MODE → light signature
+    // icon
+    toggleIcon.classList.remove("fa-moon");
+    toggleIcon.classList.add("fa-sun");
+
+    // signature
     signatureImg.src = "assets/signature-light.png";
-    toggleBtn.textContent = "☀";
   } else {
     body.classList.add("light");
     body.classList.remove("dark");
 
-    // LIGHT MODE → dark signature
+    // icon
+    toggleIcon.classList.remove("fa-sun");
+    toggleIcon.classList.add("fa-moon");
+
+    // signature
     signatureImg.src = "assets/signature-dark.png";
-    toggleBtn.textContent = "☾";
   }
 
   localStorage.setItem("theme", theme);
 }
 
-/* On page load */
-const savedTheme = localStorage.getItem("theme") || "dark";
-applyTheme(savedTheme);
+/* Load saved theme (default: dark OR light — choose one) */
+applyTheme(localStorage.getItem("theme") || "dark");
 
 /* Toggle click */
 toggleBtn.addEventListener("click", () => {
-  const isDark = body.classList.contains("dark");
-  applyTheme(isDark ? "light" : "dark");
+  const nextTheme = body.classList.contains("dark") ? "light" : "dark";
+  applyTheme(nextTheme);
 });
 
 
