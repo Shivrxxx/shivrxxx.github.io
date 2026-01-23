@@ -40,7 +40,6 @@ toggleBtn.addEventListener("click", () => {
 });
 
 
-
 // MOBILE MENU
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.querySelector(".mobile-menu");
