@@ -36,34 +36,31 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
-const navLogo = document.getElementById("siteLogo");
-
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-  const isLight = document.body.classList.contains("light");
-
-  navLogo.src = isLight
-    ? "assets/signature-light.png"
-    : "assets/signature-dark.png";
-});
-
+// Updated version with both navbar and hero logos
 const themeToggle = document.getElementById("themeToggle");
-const logo = document.getElementById("siteLogo");
+const navLogo = document.getElementById("siteLogo");
+const heroLogo = document.getElementById("heroLogo");
 
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
   const isLight = document.body.classList.contains("light");
-
-  // Fade out
-  logo.style.opacity = "0";
-
+  
+  // Fade out both logos
+  navLogo.style.opacity = "0";
+  heroLogo.style.opacity = "0";
+  
   setTimeout(() => {
-    // Replace image ONLY (same element, same place)
-    logo.src = isLight
+    // Replace both images
+    navLogo.src = isLight
       ? "assets/signature-light.png"
       : "assets/signature-dark.png";
-
-    // Fade in
-    logo.style.opacity = "1";
+    
+    heroLogo.src = isLight
+      ? "assets/signature-light.png"
+      : "assets/signature-dark.png";
+    
+    // Fade in both logos
+    navLogo.style.opacity = "1";
+    heroLogo.style.opacity = "1";
   }, 150);
 });
