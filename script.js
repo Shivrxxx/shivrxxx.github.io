@@ -24,13 +24,11 @@ if (themeToggle) {
     body.classList.toggle("light");
     const isLight = body.classList.contains("light");
 
-    // Update toggle text
-    themeToggle.textContent = isLight ? "light" : "Dark";
+    themeToggle.textContent = isLight ? "☀️" : "🌙";
 
-    // Smooth logo swap (same place, no movement)
     const newSrc = isLight
-      ? "assets/signature-light.png"
-      : "assets/signature-dark.png";
+      ? "assets/signature-dark.png"
+      : "assets/signature-light.png";
 
     [navLogo, heroLogo].forEach(logo => {
       if (!logo) return;
@@ -38,7 +36,7 @@ if (themeToggle) {
       setTimeout(() => {
         logo.src = newSrc;
         logo.style.opacity = "1";
-      }, 150);
+      }, 160);
     });
   });
 }
