@@ -6,13 +6,17 @@ const signatureImg = document.getElementById("signatureImg");
 /* Apply theme */
 function applyTheme(theme) {
   if (theme === "dark") {
-    body.classList.remove("light");
     body.classList.add("dark");
+    body.classList.remove("light");
+
+    // DARK MODE → light signature
     signatureImg.src = "assets/signature-light.png";
     toggleBtn.textContent = "☀";
   } else {
-    body.classList.remove("dark");
     body.classList.add("light");
+    body.classList.remove("dark");
+
+    // LIGHT MODE → dark signature
     signatureImg.src = "assets/signature-dark.png";
     toggleBtn.textContent = "☾";
   }
@@ -20,16 +24,16 @@ function applyTheme(theme) {
   localStorage.setItem("theme", theme);
 }
 
-/* Load saved theme (default = light) */
-const savedTheme = localStorage.getItem("theme") || "light";
+/* On page load */
+const savedTheme = localStorage.getItem("theme") || "dark";
 applyTheme(savedTheme);
 
-/* Toggle */
+/* Toggle click */
 toggleBtn.addEventListener("click", () => {
-  const currentTheme = body.classList.contains("dark") ? "dark" : "light";
-  const nextTheme = currentTheme === "dark" ? "light" : "dark";
-  applyTheme(nextTheme);
+  const isDark = body.classList.contains("dark");
+  applyTheme(isDark ? "light" : "dark");
 });
+
 
 // MOBILE MENU
 const menuToggle = document.getElementById("menuToggle");
