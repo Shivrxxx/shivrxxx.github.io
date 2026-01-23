@@ -36,31 +36,26 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
-// Updated version with both navbar and hero logos
+
 const themeToggle = document.getElementById("themeToggle");
-const navLogo = document.getElementById("siteLogo");
-const heroLogo = document.getElementById("heroLogo");
+const logo = document.getElementById("siteLogo");
 
 themeToggle.addEventListener("click", () => {
+  // Toggle theme class
   document.body.classList.toggle("light");
+
   const isLight = document.body.classList.contains("light");
-  
-  // Fade out both logos
-  navLogo.style.opacity = "0";
-  heroLogo.style.opacity = "0";
-  
+
+  // Fade out (no layout change)
+  logo.style.opacity = "0";
+
   setTimeout(() => {
-    // Replace both images
-    navLogo.src = isLight
+    // Replace image ONLY (same element, same place)
+    logo.src = isLight
       ? "assets/signature-light.png"
       : "assets/signature-dark.png";
-    
-    heroLogo.src = isLight
-      ? "assets/signature-light.png"
-      : "assets/signature-dark.png";
-    
-    // Fade in both logos
-    navLogo.style.opacity = "1";
-    heroLogo.style.opacity = "1";
+
+    // Fade back in
+    logo.style.opacity = "1";
   }, 150);
 });
