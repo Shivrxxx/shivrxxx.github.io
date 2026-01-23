@@ -25,7 +25,7 @@ if (themeToggle) {
     const isLight = body.classList.contains("light");
 
     // Update toggle text
-    themeToggle.textContent = isLight ? "Dark" : "Light";
+    themeToggle.textContent = isLight ? "light" : "Dark";
 
     // Smooth logo swap (same place, no movement)
     const newSrc = isLight
