@@ -744,6 +744,73 @@ section {
     aspect-ratio: 2 / 1;
   }
 }
+/* ======================================================
+   PROJECT MODAL (FINAL FIX)
+   ====================================================== */
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;                 /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.project-modal.active {
+  display: flex;                 /* 🔑 centers modal */
+}
+
+/* modal box */
+.modal-content {
+  position: relative;
+  width: 420px;
+  max-width: 90%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+  text-align: center;
+  color: var(--text);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: modalScale 0.3s ease;
+}
+
+@keyframes modalScale {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* close button */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* action link */
+.modal-link {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
 
 
 /* ================= CONTACT ================= */
