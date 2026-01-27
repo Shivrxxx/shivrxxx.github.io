@@ -3,185 +3,120 @@
 ========================================================= */
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
-  if (preloader) {
-    preloader.classList.add("hide");
-  }
+  if (!preloader) return;
+
+  preloader.style.opacity = "0";
+  preloader.style.pointerEvents = "none";
+
+  setTimeout(() => {
+    preloader.remove();
+  }, 600);
 });
 
+
 /* =========================================================
-   THEME TOGGLE (TEXT BASED)
-   Dark → shows "Light"
-   Light → shows "Dark"
-   No localStorage (GitHub Pages safe)
+   DARK ↔ LIGHT TOGGLE (state + text/icon)
 ========================================================= */
 const themeToggle = document.getElementById("themeToggle");
-const body = document.body;
-const navLogo = document.getElementById("siteLogo");
-const heroLogo = document.getElementById("heroLogo");
 
 if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("light");
-    const isLight = body.classList.contains("light");
-
-    /* ICON SWITCH (NO TEXT) */
-    themeToggle.textContent = isLight ? "☀️" : "🌙";
-
-    /* LOGO SOURCE */
-    const newSrc = isLight
-      ? "assets/signature-dark.png"
-      : "assets/signature-light.png";
-
-    /* SMOOTH LOGO SWAP */
-    [navLogo, heroLogo].forEach(logo => {
-      if (!logo) return;
-      logo.style.opacity = "0";
-      setTimeout(() => {
-        logo.src = newSrc;
-        logo.style.opacity = "1";
-      }, 150);
-    });
-  });
-}
-
-
-/* =========================================================
-   STAGGERED HERO TEXT (WORD BY WORD)
-========================================================= */
-document.querySelectorAll(".stagger").forEach(el => {
-  const words = el.innerText.split(" ");
-  el.innerHTML = words
-    .map(
-      (word, i) =>
-        `<span style="animation-delay:${i * 0.08}s">${word}</span>`
-    )
-    .join(" ");
-});
-
-/* =========================================================
-   NAV ACTIVE LINK
-========================================================= */
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("click", () => {
-    document.querySelectorAll(".nav-link").forEach(l =>
-      l.classList.remove("active")
+  const setToggleState = () => {
+    const isLight = document.body.classList.contains("light");
+    themeToggle.textContent = isLight ? "☀️ Light" : "🌙 Dark";
+    themeToggle.setAttribute(
+      "aria-label",
+      isLight ? "Switch to dark mode" : "Switch to light mode"
     );
-    link.classList.add("active");
-  });
-});
+  };
 
-/* =========================================================
-   MOBILE HAMBURGER MENU
-========================================================= */
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
+  // initial state
+  setToggleState();
 
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("open");
-  });
-
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("open");
-    });
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    setToggleState();
   });
 }
 
+
 /* =========================================================
-   BUTTON PRESS MICRO INTERACTION
+   WORD-BY-WORD HERO TEXT ANIMATION
 ========================================================= */
-document.querySelectorAll(".btn").forEach(btn => {
-  btn.addEventListener("mousedown", () => {
-    btn.style.transform = "scale(0.95)";
-  });
-  btn.addEventListener("mouseup", () => {
-    btn.style.transform = "scale(1)";
-  });
+document.querySelectorAll(".animate-text").forEach(el => {
+  const words = el.innerText.trim().split(" ");
+  el.innerHTML = words
+    .map((word, i) => {
+      return `<span style="animation-delay:${i * 0.05}s">${word}&nbsp;</span>`;
+    })
+    .join("");
 });
 
-/* =========================================================
-   SCROLL REVEAL (ONCE, NO REPEAT)
-========================================================= */
-const revealItems = document.querySelectorAll(
-  ".reveal, .skill-card, .timeline-item, .project-card"
-);
 
+/* =========================================================
+   SCROLL REVEAL (projects, skills, timeline)
+========================================================= */
 const revealObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+        entry.target.classList.add("show");
         revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-revealItems.forEach(item => revealObserver.observe(item));
-
-/* =========================================================
-   PROJECT MODAL (VIEW WORK)
-========================================================= */
-const modal = document.getElementById("projectModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalGallery = document.querySelector(".modal-gallery");
-const modalClose = document.querySelector(".modal-close");
-
-document.querySelectorAll(".view-work").forEach(btn => {
-  btn.addEventListener("click", e => {
-    const card = e.target.closest(".project-card");
-    if (!card) return;
-
-    modalTitle.textContent =
-      card.querySelector("h4")?.innerText || "";
-    modalDesc.textContent =
-      card.querySelector("p")?.innerText || "";
-
-    modalGallery.innerHTML = "";
-    const img = card.querySelector("img")?.cloneNode();
-    if (img) modalGallery.appendChild(img);
-
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-});
-
-function closeModal() {
-  modal.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
-if (modalClose) modalClose.addEventListener("click", closeModal);
-
-if (modal) {
-  modal.addEventListener("click", e => {
-    if (e.target === modal) closeModal();
-  });
-}
-
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && modal.classList.contains("active")) {
-    closeModal();
-  }
-});
-/* ================= REVEAL ON SCROLL ================= */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
       }
     });
   },
   { threshold: 0.15 }
 );
 
-revealElements.forEach((el) => revealObserver.observe(el));
+document.querySelectorAll(
+  ".project-card, .skill-card, .timeline-item"
+).forEach(el => {
+  el.classList.add("reveal");
+  revealObserver.observe(el);
+});
+
+
+/* =========================================================
+   MOBILE HAMBURGER MENU (animated + spacing safe)
+========================================================= */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
+
+  // close menu on link click (mobile UX)
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("open");
+    });
+  });
+}
+
+
+/* =========================================================
+   OPTIONAL: NAV ACTIVE STATE ON SCROLL
+========================================================= */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
