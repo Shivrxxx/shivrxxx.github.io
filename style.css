@@ -75,18 +75,25 @@ section {
 }
 
 /* ================= NAVBAR ================= */
-.navbar {
-  height: 80px;
-  padding: 0 80px;
+.nav-right {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg);
+  gap: 28px;
 }
+.nav-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 28px;
+}
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 
 .nav-signature {
   height: 36px;
