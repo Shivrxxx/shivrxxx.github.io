@@ -305,14 +305,17 @@ section {
     margin: 0 auto;
   }
 }
-/* ================= HERO SIGNATURE (MOBILE) ================= */
+/* ================= HERO SIGNATURE (MOBILE — FORCE CENTER) ================= */
 @media (max-width: 768px) {
-  .hero .signature {
-    width: 290px;
-    height: 70px;
-    object-fit: contain;
-    display: block;
-    margin: 12px auto 20px; /* clean spacing */
+  .hero img.signature {
+    display: block !important;
+    width: 290px !important;
+    height: 70px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 12px !important;
+    margin-bottom: 20px !important;
   }
 }
 
