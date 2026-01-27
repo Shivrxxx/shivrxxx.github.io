@@ -1229,7 +1229,7 @@ footer {
 
 /* icon base — WHITE */
 .social-links i {
-  font-size: 38px;
+  font-size: 32px;
   color: #ffffff; /* default white */
   transition: color 0.25s ease, transform 0.25s ease;
 }
