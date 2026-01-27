@@ -75,44 +75,49 @@ section {
 }
 
 ./* ================= NAVBAR LAYOUT ================= */
+/* ================= NAVBAR ================= */
 .navbar {
   display: flex;
-  align-items: center;
+  align-items: center;          /* vertical alignment */
   justify-content: space-between;
-  padding: 18px 40px; /* adjust if needed */
+  padding: 16px 40px;
+  height: 90px;                 /* enough for 59px logo */
+  box-sizing: border-box;
 }
 
-/* LEFT SIDE: SIGNATURE */
+/* ================= LEFT: SIGNATURE ================= */
 .nav-left {
   display: flex;
   align-items: center;
+  flex-shrink: 0;               /* prevents squeezing */
 }
 
-/* RIGHT SIDE: MENU */
+.nav-signature {
+  width: 300px;                 /* EXACT size */
+  height: 59px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= RIGHT: MENU ================= */
 .nav-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 5px; /* ✅ EXACT 5px spacing */
+  gap: 5px;                     /* EXACT spacing */
+  flex-wrap: nowrap;            /* stay on one line */
 }
 
-/* MENU LINKS */
 /* ================= NAV LINKS ================= */
-.nav-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 5px; /* ✅ EXACT spacing you want */
-}
-
 .nav-link {
   padding: 6px 10px;
   font-family: "Space Grotesk", sans-serif;
   font-size: 15px;
-  line-height: 1.3;              /* better vertical balance */
+  line-height: 1.3;
   color: var(--muted);
   text-decoration: none;
   position: relative;
+  white-space: nowrap;          /* prevents wrapping */
   transition: color 0.3s ease;
 }
 
@@ -125,9 +130,9 @@ section {
 .nav-link.active::after {
   content: "";
   position: absolute;
-  left: 10px;                    /* aligns with padding */
+  left: 10px;
   right: 10px;
-  bottom: -4px;                  /* tighter + cleaner */
+  bottom: -4px;
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
@@ -140,6 +145,7 @@ section {
   gap: 18px;
 }
 
+/* ================= THEME TOGGLE ================= */
 #themeToggle {
   background: none;
   border: none;
@@ -152,6 +158,7 @@ section {
 #themeToggle:hover {
   transform: rotate(20deg);
 }
+
 
 /* ================= HAMBURGER ================= */
 .hamburger {
