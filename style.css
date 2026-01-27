@@ -713,7 +713,7 @@ footer {
 
 /* ================= REVEAL ================= */
 .reveal {
-  opacity: 0;
+  opacity: 10;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
