@@ -74,7 +74,6 @@ section {
   }
 }
 
-/* ================= NAVBAR ================= */
 ./* ================= NAVBAR LAYOUT ================= */
 .navbar {
   display: flex;
@@ -98,24 +97,21 @@ section {
 }
 
 /* MENU LINKS */
-.nav-link {
-  padding: 6px 10px; /* improves click area */
-  text-decoration: none;
-  color: var(--text);
-  font-size: 14px;
-  line-height: 1;
-}
-
-.nav-links {
+/* ================= NAV LINKS ================= */
+.nav-right {
   display: flex;
-  gap: 36px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px; /* ✅ EXACT spacing you want */
 }
 
 .nav-link {
+  padding: 6px 10px;
   font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  line-height: 1.3;              /* better vertical balance */
   color: var(--muted);
   text-decoration: none;
-  font-size: 16px;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -125,17 +121,19 @@ section {
   color: var(--text);
 }
 
+/* Active underline */
 .nav-link.active::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
+  left: 10px;                    /* aligns with padding */
+  right: 10px;
+  bottom: -4px;                  /* tighter + cleaner */
   height: 2px;
   background: var(--accent);
+  border-radius: 2px;
 }
 
-/* Actions */
+/* ================= NAV ACTIONS ================= */
 .nav-actions {
   display: flex;
   align-items: center;
