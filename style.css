@@ -75,24 +75,35 @@ section {
 }
 
 /* ================= NAVBAR ================= */
-./* NAVBAR LAYOUT */
+./* ================= NAVBAR LAYOUT ================= */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 18px 40px; /* adjust if needed */
 }
 
-/* MENU ALIGN RIGHT */
+/* LEFT SIDE: SIGNATURE */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+/* RIGHT SIDE: MENU */
 .nav-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 28px;
+  gap: 5px; /* ✅ EXACT 5px spacing */
 }
 
-
-.nav-signature {
-  height: 36px;
+/* MENU LINKS */
+.nav-link {
+  padding: 6px 10px; /* improves click area */
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1;
 }
 
 .nav-links {
