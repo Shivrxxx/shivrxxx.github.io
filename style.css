@@ -305,6 +305,17 @@ section {
     margin: 0 auto;
   }
 }
+/* ================= HERO SIGNATURE (MOBILE) ================= */
+@media (max-width: 768px) {
+  .hero .signature {
+    width: 290px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: 12px auto 18px; /* clean spacing */
+  }
+}
+
 /* ================= TABLET (769px – 1100px) ================= */
 
 @media (max-width: 1100px) {
