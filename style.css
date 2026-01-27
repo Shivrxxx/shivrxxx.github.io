@@ -356,6 +356,15 @@ section {
     width: 260px;
   }
 }
+.hero h1,
+.hero h2,
+.description {
+  letter-spacing: 0.2px;
+}
+
+.nav-link {
+  line-height: 1.4;
+}
 
 /* ================= HERO ================= */
 .hero {
